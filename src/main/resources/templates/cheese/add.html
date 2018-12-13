@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+	<head>
+		<meta charset="UTF-8"/>
+		<title th:text="${title}"></title>
+	</head>
+	<body>
+		<h1 th:text="${title}"></h1>
+		<form method="post">
+			<input type="text" name="cheeseName" placeholder="Cheese Type"/>
+			<input type="submit" value="Cheese Me!"/>
+		</form>
+	</body>
+</html>
