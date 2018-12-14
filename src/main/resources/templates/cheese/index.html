@@ -1,14 +1,10 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="UTF-8"/>
-		<title th:text="${title}"></title>
-	</head>
+<head th:replace="fragments :: header"></head>
 	<body>
-		<h1 th:text="${title}"></h1>
-		<a href="/cheese/add">Add Another Slice!</a>
+		<nav th:replace="fragments :: navigation"></nav>
 		<ul>
-			<li th:each="cheese : ${cheeses}" th:text="${cheese}"></li>
+			<li th:each="cheese:${cheeses}" th:text="${cheese.key + '! ' + cheese.value}"/>
 		</ul>
 		<h5 th:unless="${cheeses} and ${cheeses.size()}">No CHEDDAR! :(</h5>
 	</body>

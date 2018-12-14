@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-	<head>
-		<meta charset="UTF-8"/>
-		<title th:text="${title}"></title>
-	</head>
+<head th:replace = "fragments :: header"></head>
 	<body>
-		<h1 th:text="${title}"></h1>
+		<nav th:replace="fragments :: navigation"></nav>
+		<br/>
 		<form method="post">
-			<input type="text" name="cheeseName" placeholder="Cheese Type"/>
+			<input type="text" name="cheeseName" th:value="${cheeseName}" placeholder="Cheese Type" autofocus required/>
+			<input type="text" name="cheeseDesc" th:value="${cheeseDesc}" placeholder="Tell me about this cheese!"/>
 			<input type="submit" value="Cheese Me!"/>
 		</form>
+		<h5 th:unless="!${error}" th:text="${error}" style="color:red"></h5>
 	</body>
 </html>
